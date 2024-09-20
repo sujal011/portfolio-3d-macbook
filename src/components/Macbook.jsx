@@ -1,6 +1,6 @@
 import { OrbitControls, useGLTF, useScroll, useTexture } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import React from 'react'
+import React, { useRef } from 'react'
 
 import * as THREE from "three"
 
@@ -8,6 +8,10 @@ const Macbook = () => {
    let model = useGLTF("./mac.glb")
    let texture = useTexture("./MacBook-SS.png")
    let meshes ={};
+
+   const macbookRef = useRef();
+   console.log('macbookRef: ',macbookRef );
+   
 
    model.scene.traverse((e)=>{
       meshes[e.name]=e;
@@ -25,12 +29,13 @@ const Macbook = () => {
 
     useFrame((state,delta)=>{
       meshes.screen.rotation.x = THREE.MathUtils.degToRad(180- (data.offset*90))
+      meshes.Scene.rotation.y = THREE.MathUtils.degToRad(360 -(data.offset*20))
     })
 
-    let rotate = THREE.MathUtils.degToRad(-20);
+    // let rotate = THREE.MathUtils.degToRad(-20);
    
   return (
-    <group position={[0,-10,20]} rotation-y={rotate}>
+    <group position={[0,-10,20]} ref={macbookRef}>
 
    <primitive object={model.scene}/>
     </group>
