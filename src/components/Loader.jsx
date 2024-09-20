@@ -10,7 +10,7 @@ const Loader = () => {
           fontWeight: 800,
           marginTop: 40,
         }}>
-        {progress !== 0 ? `${progress.toFixed(2)}%` : `Loading...${progress}`}
+        {progress !== 0 ? `${progress.toFixed(2)}%` : `Loading...`}
       </p>
     // {/* </Html> */}
   );
