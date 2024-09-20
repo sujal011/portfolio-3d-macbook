@@ -11,10 +11,10 @@ const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
 
-  let camera={fov:"30",position:[0,10,150]};
+  let camera={fov:"30",position:[0,10,130]};
 
   if(isMobile){
-    camera={fov:"30",position:[0,10,200]}
+    camera={fov:"32",position:[0,10,180]}
   }
 
   return (
