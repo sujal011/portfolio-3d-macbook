@@ -30,7 +30,7 @@ export function SpringBoot(props) {
       <mesh
         geometry={nodes.node.geometry}
       >
-      <meshBasicMaterial color={"#63B540"}/>
+      <meshStandardMaterial color={"#63B540"}/>
       </mesh>
     </group>
   )
